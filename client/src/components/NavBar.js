@@ -6,16 +6,16 @@ import { MenuIcon } from "@heroicons/react/outline";
 
 const NavBar = () => {
   return (
-    <Popover className="relative  bg-white-200">
+    <Popover className="relative  bg-white border-purple border-b">
       <>
-        <div className="max-w-7xl mx-auto px-4 sm:px-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 ">
           <div className="flex justify-between items-center py-6">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <a href="#">
                 <img className="h-8 w-auto sm:h-10" src={logo} />
               </a>
             </div>
-            <div className=" flex justify-center">
+            <div className="flex justify-center">
               <SearchBar />
             </div>
             {/* hamburger menu at md vp */}
@@ -24,22 +24,27 @@ const NavBar = () => {
                 <MenuIcon className="h-8 w-8" aria-hidden="true" />
               </Popover.Button>
             </div>
-
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <a
                 href="#"
-                className="whitespace-nowrap text-base font-medium text-white-900 hover:text-white-500"
+                className="whitespace-nowrap text-base font-medium text-black hover:text-green cursor-pointer"
               >
                 Log in
               </a>
               <a
                 href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base text-white-50 bg-purple-400 hover:bg-purple-300"
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base text-white bg-purple hover:bg-purple"
               >
                 Register
               </a>
             </div>
+            
           </div>
+          <div className=" flex justify-center">
+              <a className="px-2 font-sans" href="#">Categories</a>
+              <a className="px-2 font-sans" href="#">Popular</a>
+              <a className="px-2 font-sans" href="#">Categories</a>
+            </div>
         </div>
       </>
     </Popover>

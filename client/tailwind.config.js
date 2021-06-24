@@ -10,11 +10,11 @@ module.exports = {
       center: true,
     },
     colors: {
-      green: colors.emerald,
-      pink: colors.pink,
-      purple: colors.violet,
-      blue: colors.blue,
-      white: colors.trueGray
+      green: "#8be59c",
+      pink: "#ea3574",
+      purple: "#9689e2",
+      blue: "#75b9d4",
+      white: "#fff"
     }
   },
   variants: {
