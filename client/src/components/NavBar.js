@@ -1,10 +1,18 @@
 import React from "react";
 import logo from "../img/logo.png";
 import SearchBar from "./SearchBar";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
+import { connect } from "react-redux";
+import { videoTerm } from "../actions/index"
 
-const NavBar = () => {
+const NavBar = (props) => {
+  
+  const onVideoSubmit = (formValues) => {
+    console.log(formValues, "formValues")
+    props.videoTerm(formValues);
+  };
+
   return (
     <Popover className="relative  bg-white border-purple border-b">
       <>
@@ -16,7 +24,7 @@ const NavBar = () => {
               </a>
             </div>
             <div className="flex justify-center">
-              <SearchBar />
+              <SearchBar onVideoSubmit={onVideoSubmit} />
             </div>
             {/* hamburger menu at md vp */}
             <div className="-mr-2 -my-2 md:hidden">
@@ -38,17 +46,32 @@ const NavBar = () => {
                 Register
               </a>
             </div>
-            
           </div>
           <div className=" flex justify-center">
-              <a className="px-2 font-sans" href="#">Categories</a>
-              <a className="px-2 font-sans" href="#">Popular</a>
-              <a className="px-2 font-sans" href="#">Categories</a>
-            </div>
+            <a className="px-2 font-sans" href="#">
+              Categories
+            </a>
+            <a className="px-2 font-sans" href="#">
+              Popular
+            </a>
+            <a className="px-2 font-sans" href="#">
+              Categories
+            </a>
+          </div>
         </div>
       </>
     </Popover>
   );
 };
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return {
+    videoTerm: state.videoTerm,
+  };
+};
+
+const mapDispatchToProps = {
+  videoTerm: (term) => videoTerm(term),
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
