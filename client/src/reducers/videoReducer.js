@@ -1,6 +1,6 @@
 const videoReducer = (state = { videos: [] }, action) => {
   switch (action.type) {
-    case "ADD_BOXES":
+    case "ADD_VIDEOS":
       return {
         ...state,
         videos: action.payload,
@@ -9,3 +9,5 @@ const videoReducer = (state = { videos: [] }, action) => {
       return state;
   }
 };
+
+export default videoReducer;

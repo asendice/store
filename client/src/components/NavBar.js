@@ -4,13 +4,13 @@ import SearchBar from "./SearchBar";
 import { Popover } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import { connect } from "react-redux";
-import { videoTerm } from "../actions/index"
+import { videoTerm } from "../actions"
 
 const NavBar = (props) => {
   
   const onVideoSubmit = (formValues) => {
-    console.log(formValues, "formValues")
-    props.videoTerm(formValues);
+    console.log(formValues.search, "formValues")
+    props.videoTerm(formValues.search);
   };
 
   return (
